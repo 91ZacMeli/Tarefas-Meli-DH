@@ -25,26 +25,25 @@ public class exercicio4 {
         int somaA= 0;
         int x;
 
-        for(int i = 0;i<20; i++) {
+        for(int i = 0;i<50; i++) {
             System.out.println("Digite o numero Correspondente de 1 a 5");
-            System.out.println("Quais jornais o entrevistado lê?\n1 todos os Jornais,\n2 joranal A e jornal C,\n3 jornal A e jornal B, \n4 joranal B e jornal C\n5 apenas o Jornal A?");
+            System.out.println("Quais jornais o entrevistado lê?\n\n1 todos os Jornais,\n2 joranal A e jornal C,\n3 jornal A e jornal B, \n4 joranal B e jornal C\n5 apenas o Jornal A?");
             x = entrada.nextInt();
-            if(assinaturas[x-1] == 1) {
-                somaTodos += 1;
-            }
-                else if(assinaturas[x-1] ==2) {
-                somaA_c += 1;
-            }
-              else if(assinaturas[x-1] == 3) {
-                somaA_b += 1;
-            }
-            else if(assinaturas[x-1] == 4) {
-                somaB_c += 1;
-            }
-            else if(assinaturas[x-1] == 5) {
-                somaA += 1;
-            }else {
-                System.out.println("Valor inválido");
+            if(x>0 && x<6) {
+                if (assinaturas[x - 1] == 1) {
+                    somaTodos += 1;
+                } else if (assinaturas[x - 1] == 2) {
+                    somaA_c += 1;
+                } else if (assinaturas[x - 1] == 3) {
+                    somaA_b += 1;
+                } else if (assinaturas[x - 1] == 4) {
+                    somaB_c += 1;
+                } else if (assinaturas[x - 1] == 5) {
+                    somaA += 1;
+                }
+                }else {
+                System.out.println("Valor inválido !!!\n");
+                i--;
             }
         }
         System.out.println("São "+ somaTodos+" Assinantes de todos os Jornais");
