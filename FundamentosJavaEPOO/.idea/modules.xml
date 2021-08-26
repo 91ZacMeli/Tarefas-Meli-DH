@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Excecoes/Excecoes.iml" filepath="$PROJECT_DIR$/Excecoes/Excecoes.iml" />
       <module fileurl="file://$PROJECT_DIR$/FundamentosJavaEPOO.iml" filepath="$PROJECT_DIR$/FundamentosJavaEPOO.iml" />
     </modules>
   </component>

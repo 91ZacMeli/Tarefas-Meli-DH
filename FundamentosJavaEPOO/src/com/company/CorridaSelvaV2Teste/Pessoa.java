@@ -1,4 +1,4 @@
-package com.company.CorridaSelvaV2;
+package com.company.CorridaSelvaV2Teste;
 
 public class Pessoa {
     private String rg, nome, sobrenome, telefone, numEmergencia, grupoSangue;
