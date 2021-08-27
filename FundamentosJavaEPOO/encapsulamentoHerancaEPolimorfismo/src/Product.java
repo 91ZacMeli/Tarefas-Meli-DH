@@ -6,9 +6,16 @@ public class Product {
     private double price;
     private int chave = 0;
 
+    HashMap<Integer, List<Product>> productItens = new HashMap<>();
+
     public Product(String name, double price) {
         this.name = name;
         this.price = price;
+
+    }
+
+    public Product() {
+
     }
 
     @Override
@@ -16,9 +23,27 @@ public class Product {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
+                ", chave=" + chave +
+                ", productItens=" + productItens +
                 '}';
     }
-    public double calcular(int quantidadeOfProdutos){
+
+    public Integer inserirItem(List<Product> produtos){
+        productItens.put(++chave, produtos);
+        return chave;
+    }
+
+    public void mostrarProdutos(){
+        //for(Integer cod: productItens.keySet()){
+            List<Product> produtos = productItens.get(chave);
+           // for (Product item:produtos){
+                System.out.println(produtos);
+    //        }
+      //  }
+    }
+
+
+    public double calcular(int quantidadeOfProdutos,int price){
         return quantidadeOfProdutos * this.getPrice();
     }
 
