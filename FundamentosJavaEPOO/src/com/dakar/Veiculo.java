@@ -3,7 +3,7 @@ package com.dakar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Veiculo {
+public abstract class Veiculo {
     List<Veiculo> corredores = new ArrayList<>();
     private String tipo;
     private String marca;
@@ -15,7 +15,8 @@ public class Veiculo {
     private double peso;
 
 
-    public Veiculo(String marca, String placa, double velocidade, double aceleracao, double anguloVirada) {
+    public Veiculo(String tipo,String marca, String placa, double velocidade, double aceleracao, double anguloVirada) {
+        this.tipo = tipo;
         this.marca = marca;
         this.placa = placa;
         this.velocidade = velocidade;
@@ -35,7 +36,7 @@ public class Veiculo {
 
     }
 
-    public Veiculo(String placa) {
+    public Veiculo(String marca, String placa, double velocidade, double aceleracao, double anguloDeVirada, double pesoCarro, int quatidadeRodas) {
         this.placa = placa;
     }
 

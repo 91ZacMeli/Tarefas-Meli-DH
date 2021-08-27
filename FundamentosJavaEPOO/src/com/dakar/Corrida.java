@@ -1,20 +1,19 @@
 package com.dakar;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import java.util.*;
 
 public class Corrida {
 
     public List<Veiculo> veiculos = new ArrayList<>();
-    double classificaco[] = new double[15];
 
     private String nome;
     private double distancia;
     private double premioEmDolares;
     private int quantidadeDeVeiculosPermitidos;
-    private int inscricao = 1;
+    private int inscricao = 0;
     private double valorMaximo = 1000000;
     double resultado;
+    double classificaco[] = new double[15];
 
 
     public Corrida(String nome,double distancia, double premioEmDolares,
@@ -26,8 +25,7 @@ public class Corrida {
     }
 
     public boolean isListaCheia() {
-        if (inscricao >= quantidadeDeVeiculosPermitidos) {
-            System.out.println("Limite maximo de inscritos!");
+        if (inscricao == quantidadeDeVeiculosPermitidos) {
             return true;
         }
         return false;
@@ -35,11 +33,12 @@ public class Corrida {
 
     public void adicionarCarro(Carro carro) {
         if (isListaCheia()) {
-            System.out.println("As inscrições se esgotaram!");
+            System.out.println("Limite maximo de inscritos!");
         }else if(!isListaCheia()) {
             veiculos.add(carro);
-            inscricao++;
             System.out.println("Carro Adicionado na corrida");
+            inscricao++;
+
         }
 
     }
@@ -47,7 +46,7 @@ public class Corrida {
     public void adicionarMoto(Moto moto) {
         // quantidade menor que o valor da corrida
         if (isListaCheia()) {
-            System.out.println("As inscrições se esgotaram!");
+            System.out.println("Limite maximo de inscritos!");
         } else if (!isListaCheia()) {
             veiculos.add(moto);
             System.out.println("Moto Adicionada na corrida");
@@ -61,21 +60,33 @@ public class Corrida {
     public void removeVeiculoComPlaca(String placa){
         for (int i = 0; i < veiculos.size(); i++){
             if(veiculos.get(i).getPlaca().equals(placa)){
-                veiculos.remove(placa);
+                veiculos.remove(veiculos.get(i));
             }
         }
         System.out.println("Veiculo removido, Placa " + placa);
     }
-
-    public void calculaVencedor(List Veiculo) {
-
-            for (int i = 0; i < veiculos.size(); i++) {
-                resultado = (veiculos.get(i).getVelocidade() * veiculos.get(i).getAceleracao()) +
-                        (veiculos.get(i).getAnguloVirada() * (veiculos.get(i).getAnguloVirada())) *
-                                (veiculos.get(i).getPeso() - veiculos.get(i).getRodas() * 100);
-               classificaco[i] = resultado;
-            }
-       System.out.println(Arrays.stream(classificaco).max());
-
-       }
+    public double desempenhoCorrida(Veiculo veiculo){
+        return veiculo.getVelocidade() * 1 / 2 * veiculo.getAceleracao() /(veiculo.getAnguloVirada() *
+                (veiculo.getPeso() - veiculo.getRodas() * 100));
     }
+    public void listarVeiculosDaCorrida(){
+        System.out.println("*******VEÍCULOS INSCRITOS***********");
+        for(Veiculo v: veiculos) {
+            System.out.println(v.getPlaca());
+        }
+    }
+    public Veiculo vencedorCorrida(){
+        Veiculo vencedor = null;
+        if(!veiculos.isEmpty()) {
+            double melhorDesempenho=0;
+            for (Veiculo veiculo : veiculos) {
+                if(melhorDesempenho < desempenhoCorrida(veiculo)){
+                    melhorDesempenho = desempenhoCorrida(veiculo);
+                    vencedor=veiculo;
+                }
+            }
+        }
+        return vencedor;
+
+    }
+}
