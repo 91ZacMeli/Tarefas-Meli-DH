@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FundamentosJavaEPOO/FundamentosJavaEPOO.iml" filepath="$PROJECT_DIR$/FundamentosJavaEPOO/FundamentosJavaEPOO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FundamentosJavaEPOO/InterfaceEClasseAbstrata/InterfaceEClasseAbstrata.iml" filepath="$PROJECT_DIR$/FundamentosJavaEPOO/InterfaceEClasseAbstrata/InterfaceEClasseAbstrata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Tarefas-Meli-DH.iml" filepath="$PROJECT_DIR$/.idea/Tarefas-Meli-DH.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FundamentosJavaEPOO/TarefasDH/TarefasDH.iml" filepath="$PROJECT_DIR$/FundamentosJavaEPOO/TarefasDH/TarefasDH.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FundamentosJavaEPOO/encapsulamentoHerancaEPolimorfismo/encapsulamentoHerancaEPolimorfismo.iml" filepath="$PROJECT_DIR$/FundamentosJavaEPOO/encapsulamentoHerancaEPolimorfismo/encapsulamentoHerancaEPolimorfismo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FundamentosJavaEPOO/excecoes/excecoes.iml" filepath="$PROJECT_DIR$/FundamentosJavaEPOO/excecoes/excecoes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FundamentosJavaEPOO/modulo5/modulo5.iml" filepath="$PROJECT_DIR$/FundamentosJavaEPOO/modulo5/modulo5.iml" />
+    </modules>
+  </component>
+</project>
